@@ -1,0 +1,9 @@
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/DashBoard.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/list_install_components.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/install.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/install/local.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/install/strip.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/DashBoard_autogen_timestamp_deps.dir
+/home/karim/ITI/DashBoard/build/Desktop_Qt_5_15_16_GCC_64bit-Debug/CMakeFiles/DashBoard_autogen.dir

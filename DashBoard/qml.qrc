@@ -1,0 +1,71 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>ui/LeftColumn/LeftColumn.qml</file>
+        <file>ui/RightScreen/RightScreen.qml</file>
+        <file>ui/components/DateTime.qml</file>
+        <file>ui/assets/icons/Work-icon-add.svg</file>
+        <file>ui/assets/icons/Wifi-icon.svg</file>
+        <file>ui/assets/icons/Warningicon.svg</file>
+        <file>ui/assets/icons/Warning.svg</file>
+        <file>ui/assets/icons/Volume Icon.svg</file>
+        <file>ui/assets/icons/Tire Pressure Icon.svg</file>
+        <file>ui/assets/icons/Straight Arrow.svg</file>
+        <file>ui/assets/icons/Sport Flag Icon_battery.svg</file>
+        <file>ui/assets/icons/Sport Flag Icon.svg</file>
+        <file>ui/assets/icons/Skip Track Button.svg</file>
+        <file>ui/assets/icons/Seat Recline.svg</file>
+        <file>ui/assets/icons/Seat B&amp;F.svg</file>
+        <file>ui/assets/icons/Power Icon.svg</file>
+        <file>ui/assets/icons/Plus-icon-add.svg</file>
+        <file>ui/assets/icons/Navigation Icon.svg</file>
+        <file>ui/assets/icons/music-forword.svg</file>
+        <file>ui/assets/icons/music-backword.svg</file>
+        <file>ui/assets/icons/mi--repeat.svg</file>
+        <file>ui/assets/icons/mingcute--shuffle-2-fill.svg</file>
+        <file>ui/assets/icons/Media Icon.svg</file>
+        <file>ui/assets/icons/Map Picture.png</file>
+        <file>ui/assets/icons/mage--previous-fill.svg</file>
+        <file>ui/assets/icons/mage--play-fill.svg</file>
+        <file>ui/assets/icons/mage--pause-fill.svg</file>
+        <file>ui/assets/icons/mage--next-fill.svg</file>
+        <file>ui/assets/icons/lucide--repeat-1.svg</file>
+        <file>ui/assets/icons/logos--spotify-icon.svg</file>
+        <file>ui/assets/icons/lock.svg</file>
+        <file>ui/assets/icons/left-arrow.svg</file>
+        <file>ui/assets/icons/jam--repeat.svg</file>
+        <file>ui/assets/icons/Home-icon-Add.svg</file>
+        <file>ui/assets/icons/Home Icon.svg</file>
+        <file>ui/assets/icons/Heat Seats.svg</file>
+        <file>ui/assets/icons/Front Arrow.svg</file>
+        <file>ui/assets/icons/FMStation.svg</file>
+        <file>ui/assets/icons/Fan Icon.svg</file>
+        <file>ui/assets/icons/Erroricon.svg</file>
+        <file>ui/assets/icons/Eco Leaf Icon 2.svg</file>
+        <file>ui/assets/icons/Eco Leaf Icon.svg</file>
+        <file>ui/assets/icons/Down.svg</file>
+        <file>ui/assets/icons/Double Arrows.svg</file>
+        <file>ui/assets/icons/double-arrow.svg</file>
+        <file>ui/assets/icons/Cloud Icon.svg</file>
+        <file>ui/assets/icons/Climate Control Icon.svg</file>
+        <file>ui/assets/icons/Car Settings Icon.svg</file>
+        <file>ui/assets/icons/Bluetooth Icon.svg</file>
+        <file>ui/assets/icons/BatteryIcon_sports.svg</file>
+        <file>ui/assets/icons/BatteryIcon_normal.svg</file>
+        <file>ui/assets/icons/BatteryIcon-2.svg</file>
+        <file>ui/assets/icons/BatteryIcon.svg</file>
+        <file>ui/assets/icons/Backup Camera Picture.png</file>
+        <file>ui/assets/icons/Back Arrow.svg</file>
+        <file>ui/assets/icons/Air Windshield.svg</file>
+        <file>ui/assets/icons/Air Up.svg</file>
+        <file>ui/assets/icons/Air Down.svg</file>
+        <file>ui/assets/icons/Air Back Window.svg</file>
+        <file>ui/assets/carc.jpeg</file>
+        <file>ui/assets/tesla.gif</file>
+        <file>ui/assets/carIcons/icons8-tesla-128.png</file>
+        <file>ui/assets/carIcons/icons8-tesla-64.png</file>
+        <file>ui/components/Weather.qml</file>
+        <file>ui/assets/weather/4102326_cloud_sun_sunny_weather_icon .png</file>
+        <file>ui/components/Diagnosis.qml</file>
+    </qresource>
+</RCC>
