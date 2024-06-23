@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_UpdateManager_t {
-    QByteArrayData data[9];
-    char stringdata0[118];
+    QByteArrayData data[13];
+    char stringdata0[179];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,17 +35,23 @@ static const qt_meta_stringdata_UpdateManager_t qt_meta_stringdata_UpdateManager
 QT_MOC_LITERAL(0, 0, 13), // "UpdateManager"
 QT_MOC_LITERAL(1, 14, 18), // "checkStatusChanged"
 QT_MOC_LITERAL(2, 33, 0), // ""
-QT_MOC_LITERAL(3, 34, 15), // "processFinished"
-QT_MOC_LITERAL(4, 50, 8), // "exitCode"
-QT_MOC_LITERAL(5, 59, 20), // "QProcess::ExitStatus"
-QT_MOC_LITERAL(6, 80, 10), // "exitStatus"
-QT_MOC_LITERAL(7, 91, 14), // "checkForUpdate"
-QT_MOC_LITERAL(8, 106, 11) // "checkStatus"
+QT_MOC_LITERAL(3, 34, 15), // "installFinished"
+QT_MOC_LITERAL(4, 50, 7), // "success"
+QT_MOC_LITERAL(5, 58, 15), // "processFinished"
+QT_MOC_LITERAL(6, 74, 8), // "exitCode"
+QT_MOC_LITERAL(7, 83, 20), // "QProcess::ExitStatus"
+QT_MOC_LITERAL(8, 104, 10), // "exitStatus"
+QT_MOC_LITERAL(9, 115, 22), // "installProcessFinished"
+QT_MOC_LITERAL(10, 138, 14), // "checkForUpdate"
+QT_MOC_LITERAL(11, 153, 13), // "installUpdate"
+QT_MOC_LITERAL(12, 167, 11) // "checkStatus"
 
     },
     "UpdateManager\0checkStatusChanged\0\0"
-    "processFinished\0exitCode\0QProcess::ExitStatus\0"
-    "exitStatus\0checkForUpdate\0checkStatus"
+    "installFinished\0success\0processFinished\0"
+    "exitCode\0QProcess::ExitStatus\0exitStatus\0"
+    "installProcessFinished\0checkForUpdate\0"
+    "installUpdate\0checkStatus"
 };
 #undef QT_MOC_LITERAL
 
@@ -55,33 +61,39 @@ static const uint qt_meta_data_UpdateManager[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
-       1,   36, // properties
+       6,   14, // methods
+       1,   60, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   29,    2, 0x06 /* Public */,
+       1,    0,   44,    2, 0x06 /* Public */,
+       3,    1,   45,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    2,   30,    2, 0x08 /* Private */,
+       5,    2,   48,    2, 0x08 /* Private */,
+       9,    2,   53,    2, 0x08 /* Private */,
 
  // methods: name, argc, parameters, tag, flags
-       7,    0,   35,    2, 0x02 /* Public */,
+      10,    0,   58,    2, 0x02 /* Public */,
+      11,    0,   59,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
+    QMetaType::Void, QMetaType::Bool,    4,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int, 0x80000000 | 5,    4,    6,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 7,    6,    8,
+    QMetaType::Void, QMetaType::Int, 0x80000000 | 7,    6,    8,
 
  // methods: parameters
     QMetaType::Void,
+    QMetaType::Void,
 
  // properties: name, type, flags
-       8, QMetaType::Int, 0x00495103,
+      12, QMetaType::Int, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -96,8 +108,11 @@ void UpdateManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         (void)_t;
         switch (_id) {
         case 0: _t->checkStatusChanged(); break;
-        case 1: _t->processFinished((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QProcess::ExitStatus(*)>(_a[2]))); break;
-        case 2: _t->checkForUpdate(); break;
+        case 1: _t->installFinished((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 2: _t->processFinished((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QProcess::ExitStatus(*)>(_a[2]))); break;
+        case 3: _t->installProcessFinished((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< QProcess::ExitStatus(*)>(_a[2]))); break;
+        case 4: _t->checkForUpdate(); break;
+        case 5: _t->installUpdate(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -106,6 +121,13 @@ void UpdateManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
             using _t = void (UpdateManager::*)();
             if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&UpdateManager::checkStatusChanged)) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (UpdateManager::*)(bool );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&UpdateManager::installFinished)) {
+                *result = 1;
                 return;
             }
         }
@@ -161,13 +183,13 @@ int UpdateManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 3;
+        _id -= 6;
     }
 #ifndef QT_NO_PROPERTIES
     else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
@@ -193,6 +215,13 @@ int UpdateManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void UpdateManager::checkStatusChanged()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void UpdateManager::installFinished(bool _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

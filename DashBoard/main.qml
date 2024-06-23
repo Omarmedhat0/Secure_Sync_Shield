@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.15
 import "ui/LeftColumn"
 import "ui/RightScreen"
 import "ui/components"
+import "ui/Top Bar"
 
 Window {
     id: root
@@ -11,12 +12,41 @@ Window {
     height: 480
     visible: true
     title: qsTr("Infotainment")
-    color: "black"
+    color: "yellow"
 
     property int status: 0 // Home screen
 
     function handleButtonClick(buttonIndex) {
-        status = buttonIndex
+        status = buttonIndex;
+        updateButtonColors();
+    }
+
+    function updateButtonColors() {
+        // Reset all buttons to original color
+        homeScreen.color = "black";
+        settingScreen.color = "black";
+        navigationScreen.color = "black";
+        mediaScreen.color = "black";
+        connectScreen.color = "black";
+
+        // Highlight the selected button
+        switch (status) {
+            case 0:
+                homeScreen.color = "#2e4f6b";
+                break;
+            case 1:
+                settingScreen.color = "#2e4f6b";
+                break;
+            case 2:
+                navigationScreen.color = "#2e4f6b";
+                break;
+            case 3:
+                mediaScreen.color = "#2e4f6b";
+                break;
+            case 4:
+                connectScreen.color = "#2e4f6b";
+                break;
+        }
     }
 
     LeftColumn {
@@ -33,35 +63,28 @@ Window {
                 width: 80
                 height: 60
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: root.status == 0 ? 10 : 0
-                color: "black"
+                color: root.status === 0 ? "#2e4f6b" : "black"
                 radius: 15
                 visible: true
-
-                Behavior on anchors.horizontalCenterOffset {
-                    PropertyAnimation {
-                        duration: 200
-                        easing.type: Easing.InOutQuad
-                    }
-                }
 
                 MouseArea {
                     id: button1MouseArea
                     anchors.fill: parent
                     onClicked: {
-                        root.handleButtonClick(0)
+                        root.handleButtonClick(0);
                     }
                     onPressed: {
-                        homeScreen.width *= 1.1
-                        homeScreen.height *= 1.1
+                        homeScreen.width *= 1.1;
+                        homeScreen.height *= 1.1;
                     }
                     onReleased: {
-                        homeScreen.width /= 1.1
-                        homeScreen.height /= 1.1
+                        homeScreen.width /= 1.1;
+                        homeScreen.height /= 1.1;
                     }
                 }
 
                 Image {
+                    id: homeIcon
                     source: "qrc:/ui/assets/icons/Home Icon.svg" // Path to your image
                     z: 1
                     anchors.centerIn: parent
@@ -76,35 +99,28 @@ Window {
                 width: 80
                 height: 60
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: root.status == 1 ? 15 : 0
-                color: "black"
+                color: root.status === 1 ? "#2e4f6b" : "black"
                 radius: 15
                 visible: true
-
-                Behavior on anchors.horizontalCenterOffset {
-                    PropertyAnimation {
-                        duration: 200
-                        easing.type: Easing.InOutQuad
-                    }
-                }
 
                 MouseArea {
                     id: button2MouseArea
                     anchors.fill: parent
                     onClicked: {
-                        root.handleButtonClick(1)
+                        root.handleButtonClick(1);
                     }
                     onPressed: {
-                        settingScreen.width *= 1.1
-                        settingScreen.height *= 1.1
+                        settingScreen.width *= 1.1;
+                        settingScreen.height *= 1.1;
                     }
                     onReleased: {
-                        settingScreen.width /= 1.1
-                        settingScreen.height /= 1.1
+                        settingScreen.width /= 1.1;
+                        settingScreen.height /= 1.1;
                     }
                 }
 
                 Image {
+                    id: settingIcon
                     source: "qrc:/ui/assets/icons/Car Settings Icon.svg" // Path to your image
                     z: 1
                     anchors.centerIn: parent
@@ -119,35 +135,28 @@ Window {
                 width: 80
                 height: 60
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: root.status == 2 ? 15 : 0
-                color: "black"
+                color: root.status === 2 ? "#2e4f6b" : "black"
                 radius: 15
                 visible: true
-
-                Behavior on anchors.horizontalCenterOffset {
-                    PropertyAnimation {
-                        duration: 200
-                        easing.type: Easing.InOutQuad
-                    }
-                }
 
                 MouseArea {
                     id: button3MouseArea
                     anchors.fill: parent
                     onClicked: {
-                        root.handleButtonClick(2)
+                        root.handleButtonClick(2);
                     }
                     onPressed: {
-                        navigationScreen.width *= 1.1
-                        navigationScreen.height *= 1.1
+                        navigationScreen.width *= 1.1;
+                        navigationScreen.height *= 1.1;
                     }
                     onReleased: {
-                        navigationScreen.width /= 1.1
-                        navigationScreen.height /= 1.1
+                        navigationScreen.width /= 1.1;
+                        navigationScreen.height /= 1.1;
                     }
                 }
 
                 Image {
+                    id: navigationIcon
                     source: "qrc:/ui/assets/icons/Navigation Icon.svg" // Path to your image
                     z: 1
                     anchors.centerIn: parent
@@ -162,35 +171,28 @@ Window {
                 width: 80
                 height: 60
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: root.status == 3 ? 15 : 0
-                color: "black"
+                color: root.status === 3 ? "#2e4f6b" : "black"
                 radius: 15
                 visible: true
-
-                Behavior on anchors.horizontalCenterOffset {
-                    PropertyAnimation {
-                        duration: 200
-                        easing.type: Easing.InOutQuad
-                    }
-                }
 
                 MouseArea {
                     id: button4MouseArea
                     anchors.fill: parent
                     onClicked: {
-                        root.handleButtonClick(3)
+                        root.handleButtonClick(3);
                     }
                     onPressed: {
-                        mediaScreen.width *= 1.1
-                        mediaScreen.height *= 1.1
+                        mediaScreen.width *= 1.1;
+                        mediaScreen.height *= 1.1;
                     }
                     onReleased: {
-                        mediaScreen.width /= 1.1
-                        mediaScreen.height /= 1.1
+                        mediaScreen.width /= 1.1;
+                        mediaScreen.height /= 1.1;
                     }
                 }
 
                 Image {
+                    id: mediaIcon
                     source: "qrc:/ui/assets/icons/Media Icon.svg" // Path to your image
                     z: 1
                     anchors.centerIn: parent
@@ -205,35 +207,28 @@ Window {
                 width: 80
                 height: 60
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.horizontalCenterOffset: root.status == 4 ? 15 : 0
-                color: "black"
+                color: root.status === 4 ? "#2e4f6b" : "black"
                 radius: 15
                 visible: true
-
-                Behavior on anchors.horizontalCenterOffset {
-                    PropertyAnimation {
-                        duration: 200
-                        easing.type: Easing.InOutQuad
-                    }
-                }
 
                 MouseArea {
                     id: button5MouseArea
                     anchors.fill: parent
                     onClicked: {
-                        root.handleButtonClick(4)
+                        root.handleButtonClick(4);
                     }
                     onPressed: {
-                        connectScreen.width *= 1.1
-                        connectScreen.height *= 1.1
+                        connectScreen.width *= 1.1;
+                        connectScreen.height *= 1.1;
                     }
                     onReleased: {
-                        connectScreen.width /= 1.1
-                        connectScreen.height /= 1.1
+                        connectScreen.width /= 1.1;
+                        connectScreen.height /= 1.1;
                     }
                 }
 
                 Image {
+                    id: connectIcon
                     source: "qrc:/ui/assets/carIcons/icons8-tesla-64.png" // Path to your image
                     z: 1
                     anchors.centerIn: parent
@@ -248,11 +243,18 @@ Window {
     RightScreen {
         id: rightScreen
         anchors {
-            top: parent.top
             left: leftColumn.right
             bottom: parent.bottom
             right: parent.right
         }
         status: root.status
+    }
+    TopBar
+    {
+    }
+
+    Component.onCompleted: {
+        // Initial setup of button colors
+        updateButtonColors();
     }
 }

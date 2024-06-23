@@ -7,8 +7,8 @@ import "../components"
 Rectangle {
     id: rightScreen
     width: parent.width * 8 / 9
+    height: parent.height* 11/12
     anchors {
-        top: parent.top
         right: parent.right
         bottom: parent.bottom
     }
@@ -54,19 +54,21 @@ Rectangle {
         Rectangle {
             color: "black"
             anchors.fill: parent
-            DateTime {}
             Weather {
                 weatherType: "sunny"
-                temperature: 25
+                temperature: 24
             }
         }
     }
     Component {
         id: settingScreenComponent
-
+        Rectangle {
+            color: "black"
+            anchors.fill: parent
             Diagnosis
             {
             }
+        }
     }
 
 
@@ -101,14 +103,13 @@ Rectangle {
 
     Component {
         id: mediaScreenComponent
+
         Rectangle {
-            color: "yellow"
+            visible: true
+            color: "purple"
             anchors.fill: parent
-            Text {
-                text: "Media Screen"
-                anchors.centerIn: parent
-                color: "black"
-            }
+
+
             opacity: 0
         }
     }

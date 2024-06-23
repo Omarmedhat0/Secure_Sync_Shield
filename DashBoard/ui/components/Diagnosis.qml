@@ -1,73 +1,81 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import com.example 1.0
+import Qt.labs.settings 1.0
+import "DiagScreens"
 
 Item {
     width: parent.width
     height: parent.height
-    anchors.centerIn: parent
 
-    Rectangle {
-        color: "white"
-        width: parent.width
-        height: parent.height
+    // Define variables to control current screen
+    property int currentScreen: 0 // 0 - Home, 1 - About, 2 - DiagSessionHome, 3 - DiagSessionControl, 4 - Loading, 5 - Done
 
-        ColumnLayout {
-            anchors.centerIn: parent
-            spacing: 20
-
-            Rectangle {
-                width: 180
-                height: 60
-                color: "#252525" // grey
-                radius: 15
-                Layout.alignment: Qt.AlignHCenter
-
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: {
-                        updateManager.checkForUpdate();
-                    }
-                    onPressed: {
-                        parent.width *= 1.1
-                        parent.height *= 1.1
-                    }
-                    onReleased: {
-                        parent.width /= 1.1
-                        parent.height /= 1.1
-                    }
-                }
-
-                Text {
-                    text: "Check for Update"
-                    color: "white"
-                    font.pixelSize: 14
-                    anchors.centerIn: parent
-                }
-            }
-
-            Text {
-                id: statusText
-                text: {
-                    if (updateManager.checkStatus === 1)
-                        return "Update available";
-                    else if (updateManager.checkStatus === -1)
-                        return "No updates";
-                    else
-                        return "";
-                }
-                color: "black"
-                wrapMode: Text.Wrap
-                Layout.alignment: Qt.AlignHCenter
-            }
+    // Save currentScreen to persistent storage when changed
+    onCurrentScreenChanged: {
+        if (initialized) {
+            Settings.setValue("currentScreen", currentScreen);
         }
     }
 
-    UpdateManager {
-        id: updateManager
-        onCheckStatusChanged: {
-            console.log("Check status changed:", updateManager.checkStatus);
+    // Flag to track if the component is initialized
+    property bool initialized: false
+
+    // Initialize currentScreen from persistent storage when component is instantiated
+    Component.onCompleted: {
+        if (!initialized) {
+            currentScreen = Settings.value("currentScreen", 0);
+            initialized = true;
         }
+    }
+
+    // Timer for the delay
+    Timer {
+        id: delayTimer
+        interval: 4000 // 4 seconds
+        onTriggered: {
+            if (currentScreen === 4) {
+                currentScreen = 5; // Transition to Done screen after delay
+            }
+        }
+    }
+    // Diagnostic Home Screen
+    DiagHomeScreen
+    {
+        id: homeScreenItem
+        visible: currentScreen === 0
+    }
+    // Diagnostic About Screen
+    DiagAboutScreen {
+        id: aboutScreenItem
+        visible: currentScreen === 1
+    }
+
+    // Diagnostic Session Home screen
+    DiagSessionHomeScreen {
+        visible: currentScreen === 2
+        anchors.fill: parent
+    }
+    // Diagnostic Session Control screen
+    DiagSessionControlScreen {
+        visible: currentScreen === 3
+        anchors.fill: parent
+    }
+
+    // Loading screen content
+    DiagLoadingScreen {
+        visible: currentScreen === 4
+        anchors.fill: parent
+    }
+    // Done screen content
+    DiagDoneScreen {
+        visible: currentScreen === 5
+        anchors.fill: parent
+    }
+
+    // Settings object for persistent storage
+    Settings {
+        id: settings
+        category: "Application"
     }
 }

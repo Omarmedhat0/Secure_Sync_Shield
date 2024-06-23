@@ -67,5 +67,27 @@
         <file>ui/components/Weather.qml</file>
         <file>ui/assets/weather/4102326_cloud_sun_sunny_weather_icon .png</file>
         <file>ui/components/Diagnosis.qml</file>
+        <file>ui/components/WifiManagerComponent.qml</file>
+        <file>ui/Top Bar/TopBar.qml</file>
+        <file>ui/Top Bar/icons8-bluetooth-64.png</file>
+        <file>ui/Top Bar/icons8-4g-24.png</file>
+        <file>ui/Top Bar/icons8-bluetooth-30.png</file>
+        <file>ui/Top Bar/icons8-wifi-32.png</file>
+        <file>ui/assets/Diagnosis/connection-loading.256x254.png</file>
+        <file>ui/assets/Diagnosis/icons8-loading-sign-32.png</file>
+        <file>ui/assets/Diagnosis/icons8-car-service-64.png</file>
+        <file>ui/assets/Diagnosis/icons8-loading-50.png</file>
+        <file>ui/assets/Diagnosis/icons8-loading-50 (1).png</file>
+        <file>ui/assets/Diagnosis/icons8-maintenance-50.png</file>
+        <file>ui/components/DiagScreens/DiagHomeScreen.qml</file>
+        <file>ui/components/DiagScreens/DiagAboutScreen.qml</file>
+        <file>ui/assets/Diagnosis/icons8-back-26.png</file>
+        <file>ui/components/DiagScreens/DiagSessionHomeScreen.qml</file>
+        <file>ui/components/DiagScreens/DiagSessionControlScreen.qml</file>
+        <file>ui/components/DiagScreens/DiagLoadingScreen.qml</file>
+        <file>ui/components/DiagScreens/DiagDoneScreen.qml</file>
+        <file>ui/assets/Diagnosis/icons8-pass-50.png</file>
+        <file>ui/assets/Diagnosis/icons8-warning-80.png</file>
+        <file>ui/assets/Diagnosis/icons8-sync-32.png</file>
     </qresource>
 </RCC>
