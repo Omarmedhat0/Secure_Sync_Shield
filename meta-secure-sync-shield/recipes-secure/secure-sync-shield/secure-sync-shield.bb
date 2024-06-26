@@ -33,9 +33,18 @@ local_autologin () {
 
 # Add the function so that it is executed after the rootfs has been generated
 ROOTFS_POSTPROCESS_COMMAND += "local_autologin; "
-IMAGE_INSTALL:remove = " networkmanager"
+#IMAGE_INSTALL:remove = " networkmanager"
 IMAGE_INSTALL:remove = " packagegroup-core-x11-sato-base packagegroup-core-x11-sato"
 
+
+# IMAGE_BOOT_FILES += " config.txt cmdline.txt "
+# # Make sure cmdline.txt exists and is included in the deploy directory
+# SRC_URI += "file://cmdline.txt file://config.txt"
+
+# do_install:append() {
+#     install -m 0644 ${WORKDIR}/cmdline.txt ${D}/boot/cmdline.txt
+#     install -m 0644 ${WORKDIR}/config.txt ${D}/boot/config.txt
+# }
 # # Set the password for the root user, and create a new user nambed 'technexion`
 # EXTRA_USERS_PARAMS = " \
 #     usermod -P rootpasswd root; \

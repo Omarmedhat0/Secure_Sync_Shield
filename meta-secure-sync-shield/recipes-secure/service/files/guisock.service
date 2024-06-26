@@ -1,0 +1,10 @@
+[Unit]
+Description=GNU Hello World startup script
+
+[Service]
+Environment=DISPLAY=:0
+Environment=QT_QPA_PLATFORM=xcb
+ExecStart=/opt/QDashBoard_RPI/bin/QDashBoard_RPI
+                                                
+[Install]
+WantedBy=multi-user.target
