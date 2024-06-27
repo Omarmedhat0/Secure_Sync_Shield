@@ -129,6 +129,7 @@ Item {
                 width: 150
                 height: 50
                 color: "grey"
+                id: updateStatus
                 border.color: "white"
                 border.width: 2
                 radius: 10
@@ -144,7 +145,10 @@ Item {
                     anchors.fill: parent
                     onClicked: {
                         // Placeholder for software update functionality
+                        // someIpClient.checkForUpdate();
+                        someIpClient.installUpdate();
                         console.log("Software update button pressed");
+
                     }
                     onPressed: {
                         parent.color = "darkgrey"
@@ -185,5 +189,20 @@ Item {
                 }
             }
         }
+        /********************************/
+        /*  integerate with backend     */
+        Connections {
+            target: someIpClient
+
+            // function onUpdateAvailable(message){
+            //     updateStatus.Text = message
+            //     updateStatus.color = "green"
+            // }
+
+            function onInstallResponse(message) {
+                updateStatus.children[0].text = message // Reference the Text element inside updateStatus
+            }
+        }
+        /********************************/
     }
 }

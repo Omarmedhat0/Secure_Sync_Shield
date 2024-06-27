@@ -22,3 +22,4 @@ QMAKE_CXX.LIBDIRS = \
     /usr/lib \
     /lib/x86_64-linux-gnu \
     /lib
+QMAKE_LICHECK_TIMESTAMP = "Thu Jun 27"
