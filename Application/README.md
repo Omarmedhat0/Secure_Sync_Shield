@@ -2,6 +2,22 @@
 
 # Obstacle Avoidance Car
 
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Hardware Components](#hardware-components)
+- [Pin Configuration](#pin-configuration)
+- [Files](#files)
+  - [File 1: Initial Application](#file-1-initial-application)
+  - [File 2: Updated Application](#file-2-updated-application)
+- [Software Overview](#software-overview)
+  - [Initialization](#initialization)
+  - [Main Loop](#main-loop)
+  - [Ultrasonic Sensor Handling](#ultrasonic-sensor-handling)
+  - [Touch Sensor Handling](#touch-sensor-handling)
+  - [LED and Buzzer Control](#led-and-buzzer-control)
+  - [Motor Control](#motor-control)
+  - [Servo Motor Control](#servo-motor-control)
 ## Description
 This project is an implementation of an obstacle avoidance car using an STM32 microcontroller. The car can detect obstacles in its path using an ultrasonic sensor and will take actions to avoid them. It can also respond to a touch sensor, control LEDs, a buzzer, motors, and a servo for more complex interactions.
 
