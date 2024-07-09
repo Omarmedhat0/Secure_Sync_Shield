@@ -34,34 +34,37 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Applicationfinal1
+BUILD_ARTIFACT_NAME := App1final
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Applicationfinal1.elf \
+App1final.elf \
 
 MAP_FILES += \
-Applicationfinal1.map \
+App1final.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Applicationfinal1.list \
+App1final.list \
+
+OBJCOPY_BIN += \
+App1final.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Applicationfinal1.elf secondary-outputs
+main-build: App1final.elf secondary-outputs
 
 # Tool invocations
-Applicationfinal1.elf Applicationfinal1.map: $(OBJS) $(USER_OBJS) C:\Users\engal\STM32CubeIDE\workspace_1.15.1\trial3\STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Applicationfinal1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\engal\STM32CubeIDE\workspace_1.15.1\trial3\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Applicationfinal1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+App1final.elf App1final.map: $(OBJS) $(USER_OBJS) C:\Users\engal\STM32CubeIDE\workspace_1.15.1\App1final\STM32F401RCTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "App1final.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\engal\STM32CubeIDE\workspace_1.15.1\App1final\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="App1final.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,17 +73,22 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Applicationfinal1.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Applicationfinal1.list"
+App1final.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "App1final.list"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+App1final.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "App1final.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Applicationfinal1.elf Applicationfinal1.list Applicationfinal1.map default.size.stdout
+	-$(RM) App1final.bin App1final.elf App1final.list App1final.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

@@ -52,6 +52,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 App2FinalServoandAvoid.list \
 
+OBJCOPY_BIN += \
+App2FinalServoandAvoid.bin \
+
 
 # All Target
 all: main-build
@@ -75,12 +78,17 @@ App2FinalServoandAvoid.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOO
 	@echo 'Finished building: $@'
 	@echo ' '
 
+App2FinalServoandAvoid.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "App2FinalServoandAvoid.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) App2FinalServoandAvoid.elf App2FinalServoandAvoid.list App2FinalServoandAvoid.map default.size.stdout
+	-$(RM) App2FinalServoandAvoid.bin App2FinalServoandAvoid.elf App2FinalServoandAvoid.list App2FinalServoandAvoid.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
