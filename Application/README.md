@@ -74,7 +74,7 @@ The updated application includes the following features:
 - **Buzzer:** Sounds an alert when an obstacle is detected.
 - **Servo Motor Control:** Adjusts the servo motor angle to simulate different actions or behaviors of the car.
 
-### Software Overview
+## Software Overview
 
 #### Initialization
 The initialization function `HAL_Init()` is used to reset all peripherals, initialize the Flash interface, and the Systick. Various peripherals including GPIO, TIM, and UART are initialized.
