@@ -1,0 +1,24 @@
+2024-06-25 15:40:09,298 - INFO - Loading RSA public key from /home/muhammed/myworkspace/GP/Server/Scripts/Sec_Keys/publicKeyRasPi.pem
+2024-06-25 15:40:09,339 - INFO - RSA public key loaded successfully
+2024-06-25 15:40:09,340 - INFO - Loading RSA private key from /home/muhammed/myworkspace/GP/Server/Scripts/Sec_Keys/privateKeyPC.pem
+2024-06-25 15:40:09,436 - INFO - RSA private key loaded successfully
+2024-06-25 15:40:09,445 - INFO - Starting AES encryption
+2024-06-25 15:40:09,445 - INFO - AES encryption completed successfully
+2024-06-25 15:40:09,445 - INFO - Starting RSA encryption of the AES key
+2024-06-25 15:40:09,445 - INFO - RSA encryption of AES key completed successfully
+2024-06-25 15:40:09,445 - INFO - Starting data signing
+2024-06-25 15:40:09,447 - INFO - Data signing completed successfully
+2024-06-25 15:40:09,447 - INFO - File /home/muhammed/myworkspace/GP/Server/FilesToUpload/test.txt encrypted and signed successfully
+2024-06-25 15:40:09,447 - INFO - File /home/muhammed/myworkspace/GP/Server/FilesToUpload/test.txt encrypted successfully
+2024-06-25 15:40:09,447 - INFO - Starting upload of /home/muhammed/myworkspace/GP/Server/FilesToUpload/test_encrypted.txt to Firebase Storage as test.txt
+2024-06-25 15:40:09,450 - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2024-06-25 15:40:09,452 - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2024-06-25 15:40:09,453 - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2024-06-25 15:40:09,800 - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2024-06-25 15:40:09,805 - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2024-06-25 15:40:10,656 - DEBUG - https://storage.googleapis.com:443 "POST /upload/storage/v1/b/iti-gp-sss.appspot.com/o?uploadType=multipart HTTP/1.1" 200 762
+2024-06-25 15:40:10,658 - INFO - File test.txt uploaded successfully to Firebase Storage
+2024-06-25 15:40:10,660 - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2024-06-25 15:40:10,662 - DEBUG - Starting new HTTPS connection (1): iti-gp-sss.firebaseio.com:443
+2024-06-25 15:40:14,222 - DEBUG - https://iti-gp-sss.firebaseio.com:443 "PUT /update_flag.json?print=silent HTTP/1.1" 404 32
+2024-06-25 15:40:14,223 - ERROR - Unexpected error: 404 Not Found

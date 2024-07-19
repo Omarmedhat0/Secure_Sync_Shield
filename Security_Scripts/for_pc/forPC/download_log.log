@@ -1,0 +1,15 @@
+2024-06-25 15:40:52,686 - INFO - =====================================
+2024-06-25 15:40:52,686 - INFO - Starting download and decryption loop
+2024-06-25 15:40:52,686 - DEBUG - Converted retries value: 3 -> Retry(total=3, connect=None, read=None, redirect=None, status=None)
+2024-06-25 15:40:52,687 - DEBUG - Making request: POST https://oauth2.googleapis.com/token
+2024-06-25 15:40:52,689 - DEBUG - Starting new HTTPS connection (1): oauth2.googleapis.com:443
+2024-06-25 15:40:52,967 - DEBUG - https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+2024-06-25 15:40:52,972 - DEBUG - Starting new HTTPS connection (1): storage.googleapis.com:443
+2024-06-25 15:40:53,375 - DEBUG - https://storage.googleapis.com:443 "GET /download/storage/v1/b/iti-gp-sss.appspot.com/o/test.txt?alt=media HTTP/1.1" 200 560
+2024-06-25 15:40:53,477 - INFO - File on server has changed. Downloading new version...
+2024-06-25 15:40:53,478 - INFO - Decrypting file...
+2024-06-25 15:40:53,574 - INFO - Starting RSA decryption of the AES key
+2024-06-25 15:40:53,577 - INFO - Signature verification succeeded
+2024-06-25 15:40:53,577 - INFO - Starting AES decryption
+2024-06-25 15:40:53,577 - INFO - Existing file backed up
+2024-06-25 15:40:53,577 - INFO - File decrypted and saved successfully
