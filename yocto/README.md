@@ -32,6 +32,10 @@ This project includes the following features:
 - Fontconfig support for qtbase
 - Multi threading support with 4 threads
 
+## Project Tree 
+
+![tree](README.assets/tree.png)
+
 ## Building the Project
 
 > **CAUTION : Make sure you have an almost 100 GB free space on your hard disk as the building process take too much memory**
